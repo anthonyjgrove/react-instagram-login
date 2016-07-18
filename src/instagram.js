@@ -47,16 +47,16 @@ class InstagramLogin extends Component {
   render() {
     const style = {
       display: 'inline-block',
-      background: '#d14836',
+      background: 'linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%)',
       color: '#fff',
-      width: 190,
+      width: 200,
       paddingTop: 10,
       paddingBottom: 10,
       borderRadius: 2,
       border: '1px solid transparent',
       fontSize: 16,
       fontWeight: 'bold',
-      fontFamily: 'Roboto',
+      fontFamily: '"proxima-nova", "Helvetica Neue", Arial, Helvetica, sans-serif',
     };
     const { cssClass, buttonText, children } = this.props;
     return (

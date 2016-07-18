@@ -14,7 +14,7 @@ ReactDOM.render(
   <InstagramLogin
     clientId='5fd2f11482844c5eba963747a5f34556'
     callback={responseInstagram}
-    scope='likes+comments'
+    scope='likes+comments+follower_list'
   >
     <FontAwesome
       name='instagram'
