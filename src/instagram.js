@@ -1,5 +1,17 @@
 import React, { PropTypes, Component } from 'react';
 
+function getQueryVariable(variable) {
+  const query = window.location.search.substring(1);
+  const vars = query.split('&');
+  for (let i = 0; i < vars.length; i++) {
+    const pair = vars[i].split('=');
+    if (pair[0] === variable) {
+      return pair[1];
+    }
+  }
+  return (false);
+}
+
 class InstagramLogin extends Component {
   static propTypes = {
     callback: PropTypes.func.isRequired,
@@ -57,18 +69,6 @@ class InstagramLogin extends Component {
       </button>
     );
   }
-}
-
-function getQueryVariable(variable) {
-  var query = window.location.search.substring(1);
-  var vars = query.split("&");
-  for (var i = 0; i < vars.length; i++) {
-    var pair = vars[i].split("=");
-    if (pair[0] == variable) {
-      return pair[1];
-    }
-  }
-  return (false);
 }
 
 export default InstagramLogin;
