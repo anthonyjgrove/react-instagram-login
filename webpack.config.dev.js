@@ -1,5 +1,3 @@
-'use strict';
-
 const path = require('path');
 const webpack = require('webpack');
 
@@ -7,7 +5,7 @@ module.exports = {
   devtool: 'eval',
   entry: {
     demo: [
-      'webpack/hot/dev-server', 
+      'webpack/hot/dev-server',
       './demo/index.js',
     ],
   },
@@ -33,5 +31,7 @@ module.exports = {
     contentBase: './demo',
     historyApiFallback: true,
     compress: false,
+    host: process.env.IP || '0.0.0.0',
+    port: process.env.PORT || 8080,
   },
 };

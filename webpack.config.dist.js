@@ -1,12 +1,10 @@
-'use strict';
-
 const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
   entry: [
-    './src/index.js'
+    './src/index.js',
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -19,7 +17,7 @@ module.exports = {
       test: /\.js$/,
       loader: 'babel',
       exclude: /node_modules/,
-    }]
+    }],
   },
   externals: {
     'react': 'react',
@@ -31,8 +29,8 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
+        'NODE_ENV': JSON.stringify('production'),
+      },
     }),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.DedupePlugin(),

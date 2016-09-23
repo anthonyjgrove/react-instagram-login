@@ -3,18 +3,22 @@ import React, { PropTypes, Component } from 'react';
 function getQueryVariable(variable) {
   const query = window.location.search.substring(1);
   const vars = query.split('&');
-  for (let i = 0; i < vars.length; i++) {
-    const pair = vars[i].split('=');
+  const code = vars.map(i => {
+    const pair = i.split('=');
     if (pair[0] === variable) {
       return pair[1];
     }
-  }
-  return (false);
+  })
+  .filter(i => {
+    if (i) return i;
+  });
+  return code[0];
 }
 
 class InstagramLogin extends Component {
   static propTypes = {
-    callback: PropTypes.func.isRequired,
+    onSuccess: PropTypes.func.isRequired,
+    onFailure: PropTypes.func.isRequired,
     clientId: PropTypes.string.isRequired,
     buttonText: PropTypes.string,
     scope: PropTypes.string,
@@ -34,7 +38,13 @@ class InstagramLogin extends Component {
 
   componentDidMount() {
     if (window.location.search.includes('code')) {
-      this.props.callback(getQueryVariable('code'));
+      this.props.onSuccess(getQueryVariable('code'));
+    } else if (window.location.search.includes('error')) {
+      this.props.onFailure({
+        error: getQueryVariable('error'),
+        error_reason: getQueryVariable('error_reason'),
+        error_description: getQueryVariable('error_description'),
+      });
     }
   }
 

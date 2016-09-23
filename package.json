@@ -1,10 +1,10 @@
 {
   "name": "react-instagram-login",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "An Instagram Login Component for React",
   "main": "dist/instagram-login.js",
   "scripts": {
-    "start": "set NODE_ENV=development&& webpack-dev-server --config webpack.config.dev.js --host $IP --port $PORT",
+    "start": "set NODE_ENV=development&& webpack-dev-server --config webpack.config.dev.js",
     "bundle": "set NODE_ENV=production&& webpack -p --config webpack.config.dist.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch",

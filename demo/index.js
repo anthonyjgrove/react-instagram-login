@@ -1,4 +1,3 @@
-'use strict';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -12,12 +11,13 @@ const responseInstagram = (response) => {
 
 ReactDOM.render(
   <InstagramLogin
-    clientId='5fd2f11482844c5eba963747a5f34556'
-    callback={responseInstagram}
-    scope='likes+comments+follower_list'
+    clientId="5fd2f11482844c5eba963747a5f34556"
+    onSuccess={responseInstagram}
+    onFailure={responseInstagram}
+    scope="likes+comments+follower_list"
   >
     <FontAwesome
-      name='instagram'
+      name="instagram"
     />
     <span> Login with Instagram</span>
   </InstagramLogin>,
