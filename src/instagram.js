@@ -52,7 +52,7 @@ class InstagramLogin extends Component {
 
   onBtnClick() {
     const { clientId, scope } = this.props;
-    const redirectUri = window.location.href;
+    const redirectUri = this.props.redirectUri || window.location.href;
     window.location.href = `https://api.instagram.com/oauth/authorize/?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=code`;
   }
 
