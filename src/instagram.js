@@ -24,11 +24,13 @@ class InstagramLogin extends Component {
     scope: PropTypes.string,
     cssClass: PropTypes.string,
     children: React.PropTypes.node,
+    tag: PropTypes.string,
   };
 
   static defaultProps = {
     buttonText: 'Login with Instagram',
     scope: 'basic',
+    tag: 'button',
   };
 
   constructor(props) {
@@ -50,7 +52,7 @@ class InstagramLogin extends Component {
 
   onBtnClick() {
     const { clientId, scope } = this.props;
-    const redirectUri = window.location.href;
+    const redirectUri = this.props.redirectUri || window.location.href;
     window.location.href = `https://api.instagram.com/oauth/authorize/?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=code`;
   }
 
@@ -68,16 +70,15 @@ class InstagramLogin extends Component {
       fontWeight: 'bold',
       fontFamily: '"proxima-nova", "Helvetica Neue", Arial, Helvetica, sans-serif',
     };
-    const { cssClass, buttonText, children } = this.props;
-    return (
-      <button
-        className={ cssClass }
-        onClick={ this.onBtnClick }
-        style={ cssClass ? {} : style }
-      >
-        { children ? children : buttonText }
-      </button>
-    );
+    const { cssClass, buttonText, children, tag } = this.props;
+    const instagramLoginButton = React.createElement(
+        tag, {
+          className: cssClass,
+          onClick: this.onBtnClick,
+          style: cssClass ? {} : style,
+        }, children ? children : buttonText
+      );
+    return instagramLoginButton;
   }
 }
 

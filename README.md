@@ -52,6 +52,7 @@ Callback will return an error object.
 |   onFailure  | function |               REQUIRED               |
 |   buttonText |  string  |            Login with Instagram      |
 |   cssClass   |  string  |                   -                  |
+|     tag      |  string  |                button                |
 
 Instagram API Docs: https://www.instagram.com/developer/
 
