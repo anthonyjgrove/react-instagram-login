@@ -1,0 +1,36 @@
+{
+  "ie8": false,
+  "debug": false,
+  "sourceMap": false,
+  "compress": {
+    "unsafe_comps": true,
+    "properties": true,
+    "keep_fargs": false,
+    "pure_getters": true,
+    "collapse_vars": true,
+    "unsafe": true,
+    "warnings": false,
+    "sequences": true,
+    "dead_code": true,
+    "drop_debugger": true,
+    "comparisons": true,
+    "conditionals": true,
+    "evaluate": true,
+    "booleans": true,
+    "loops": true,
+    "unused": true,
+    "hoist_funs": true,
+    "if_return": true,
+    "join_vars": true,
+    "cascade": true,
+    "drop_console": false,
+    "pure_funcs": ["classCallCheck", "invariant", "warning"]
+  },
+  "parallel": {
+    "cache": true,
+    "workers": 2
+  },
+  "output": {
+    "comments": false
+  }
+}

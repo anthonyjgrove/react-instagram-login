@@ -53,6 +53,8 @@ Callback will return an error object.
 |   buttonText |  string  |            Login with Instagram      |
 |   cssClass   |  string  |                   -                  |
 |     tag      |  string  |                button                |
+|     type      |  string  |               button                |
+
 
 Instagram API Docs: https://www.instagram.com/developer/
 

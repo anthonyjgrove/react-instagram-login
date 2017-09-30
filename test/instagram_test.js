@@ -1,131 +1,130 @@
-import {renderComponent, expect} from './test_helper';
-import InstagramLogin from '../src/instagram';
+import { renderComponent, expect } from './test_helper'
+import InstagramLogin from '../src'
 
 describe('Instagram Login', () => {
-    const defaultText = 'Login with Instagram';
-    let component;
-    let propsObj;
+  const defaultText = 'Login with Instagram'
+  let component
+  let propsObj
 
-    describe('With default props', () => {
-        beforeEach(() => {
-            propsObj = {
-                callback(response) {},
-                clientId: '5fd2f11482844c5eba963747a5f34556',
-            };
-            component = renderComponent(InstagramLogin, propsObj);
-        });
-        
-        it('shows the button', () => {
-            expect(component).to.exist;
-        });
+  describe('With default props', () => {
+    beforeEach(() => {
+      propsObj = {
+        callback(response) {},
+        clientId: '5fd2f11482844c5eba963747a5f34556'
+      }
+      component = renderComponent(InstagramLogin, propsObj)
+    })
 
-        it('displays correct button text', () => {
-            expect(component).to.have.text(defaultText);
-        });
+    it('shows the button', () => {
+      expect(component).to.exist
+    })
 
-        it('does not have a class attr', () => {
-            expect(component).to.not.have.attr('class');
-        });
-        
-        it('has inline styles', () => {
-            expect(component).to.have.attr('style');
-        });
-    });
+    it('displays correct button text', () => {
+      expect(component).to.have.text(defaultText)
+    })
 
-    describe('With custom text and default props', () => {
-        const buttonText ='buttonText'; 
-        
-        beforeEach(() => {
-            propsObj = {
-                callback(response) {},
-                clientId: '5fd2f11482844c5eba963747a5f34556',
-                buttonText,
-            };
-            component = renderComponent(InstagramLogin, propsObj);
-        });
+    it('does not have a class attr', () => {
+      expect(component).to.not.have.attr('class')
+    })
 
-        it('shows the button', () => {
-            expect(component).to.exist;
-        });
-        
-        it('displays correct button text', () => {
-            expect(component).to.have.text(buttonText);
-        });
+    it('has inline styles', () => {
+      expect(component).to.have.attr('style')
+    })
+  })
 
-        it('does not have a class attr', () => {
-            expect(component).to.not.have.attr('class');
-        });
-        
-        it('has inline styles', () => {
-            expect(component).to.have.attr('style');
-        });
-    });
+  describe('With custom text and default props', () => {
+    const buttonText = 'buttonText'
 
-    describe('With custom class and default props', () => {
-        let cssClass ='test-class'; 
-        
-        beforeEach(() => {
-            propsObj = {
-                callback(response) {},
-                clientId: '5fd2f11482844c5eba963747a5f34556',
-                cssClass,
-            };
-            component = renderComponent(InstagramLogin, propsObj);
-        });
+    beforeEach(() => {
+      propsObj = {
+        callback(response) {},
+        clientId: '5fd2f11482844c5eba963747a5f34556',
+        buttonText
+      }
+      component = renderComponent(InstagramLogin, propsObj)
+    })
 
-        it('shows the button', () => {
-            expect(component).to.exist;
-        });
-        
-        it('displays correct button text', () => {
-            expect(component).to.have.text(defaultText);
-        });
+    it('shows the button', () => {
+      expect(component).to.exist
+    })
 
-        it('has a class attr with custom class', () => {
-            expect(component).to.have.attr('class', cssClass);
-        });
-        
-        it('does not have inline styles', () => {
-            expect(component).to.not.have.attr('style');
-        });
-        
-    });
+    it('displays correct button text', () => {
+      expect(component).to.have.text(buttonText)
+    })
 
-    describe('With children, custom text, and default props', () => {
-        const children = 'test';
-        const buttonText ='buttonText'; 
+    it('does not have a class attr', () => {
+      expect(component).to.not.have.attr('class')
+    })
 
-        beforeEach(() => {
-            propsObj = {
-                callback(response) {},
-                clientId: '5fd2f11482844c5eba963747a5f34556',
-                buttonText,
-            };
-            component = renderComponent(InstagramLogin, propsObj, children);
-        });
-        
-        it('shows the button', () => {
-            expect(component).to.exist;
-        });
+    it('has inline styles', () => {
+      expect(component).to.have.attr('style')
+    })
+  })
 
-        it('displays children text', () => {
-            expect(component).to.have.text(children);
-        });
-        
-        it('does not display default text', () => {
-            expect(component).to.not.have.text(defaultText);
-        });
-        
-        it('does not display custom text', () => {
-            expect(component).to.not.have.text(buttonText);
-        });
-        
-        it('does not have a class attr', () => {
-            expect(component).to.not.have.attr('class');
-        });
-        
-        it('has inline styles', () => {
-            expect(component).to.have.attr('style');
-        });
-    });
-});
+  describe('With custom class and default props', () => {
+    let cssClass = 'test-class'
+
+    beforeEach(() => {
+      propsObj = {
+        callback(response) {},
+        clientId: '5fd2f11482844c5eba963747a5f34556',
+        cssClass
+      }
+      component = renderComponent(InstagramLogin, propsObj)
+    })
+
+    it('shows the button', () => {
+      expect(component).to.exist
+    })
+
+    it('displays correct button text', () => {
+      expect(component).to.have.text(defaultText)
+    })
+
+    it('has a class attr with custom class', () => {
+      expect(component).to.have.attr('class', cssClass)
+    })
+
+    it('does not have inline styles', () => {
+      expect(component).to.not.have.attr('style')
+    })
+  })
+
+  describe('With children, custom text, and default props', () => {
+    const children = 'test'
+    const buttonText = 'buttonText'
+
+    beforeEach(() => {
+      propsObj = {
+        callback(response) {},
+        clientId: '5fd2f11482844c5eba963747a5f34556',
+        buttonText
+      }
+      component = renderComponent(InstagramLogin, propsObj, children)
+    })
+
+    it('shows the button', () => {
+      expect(component).to.exist
+    })
+
+    it('displays children text', () => {
+      expect(component).to.have.text(children)
+    })
+
+    it('does not display default text', () => {
+      expect(component).to.not.have.text(defaultText)
+    })
+
+    it('does not display custom text', () => {
+      expect(component).to.not.have.text(buttonText)
+    })
+
+    it('does not have a class attr', () => {
+      expect(component).to.not.have.attr('class')
+    })
+
+    it('has inline styles', () => {
+      expect(component).to.have.attr('style')
+    })
+  })
+})
