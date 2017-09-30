@@ -3,15 +3,16 @@ import React, { PropTypes, Component } from 'react';
 function getQueryVariable(variable) {
   const query = window.location.search.substring(1);
   const vars = query.split('&');
-  const code = vars.map(i => {
-    const pair = i.split('=');
-    if (pair[0] === variable) {
-      return pair[1];
-    }
-  })
-  .filter(i => {
-    if (i) return i;
-  });
+  const code = vars
+    .map(i => {
+      const pair = i.split('=');
+      if (pair[0] === variable) {
+        return pair[1];
+      }
+    })
+    .filter(i => {
+      if (i) return i;
+    });
   return code[0];
 }
 
@@ -25,12 +26,13 @@ class InstagramLogin extends Component {
     cssClass: PropTypes.string,
     children: React.PropTypes.node,
     tag: PropTypes.string,
+    redirectUri: PropTypes.string
   };
 
   static defaultProps = {
     buttonText: 'Login with Instagram',
     scope: 'basic',
-    tag: 'button',
+    tag: 'button'
   };
 
   constructor(props) {
@@ -45,7 +47,7 @@ class InstagramLogin extends Component {
       this.props.onFailure({
         error: getQueryVariable('error'),
         error_reason: getQueryVariable('error_reason'),
-        error_description: getQueryVariable('error_description'),
+        error_description: getQueryVariable('error_description')
       });
     }
   }
@@ -68,16 +70,18 @@ class InstagramLogin extends Component {
       border: '1px solid transparent',
       fontSize: 16,
       fontWeight: 'bold',
-      fontFamily: '"proxima-nova", "Helvetica Neue", Arial, Helvetica, sans-serif',
+      fontFamily: '"proxima-nova", "Helvetica Neue", Arial, Helvetica, sans-serif'
     };
     const { cssClass, buttonText, children, tag } = this.props;
     const instagramLoginButton = React.createElement(
-        tag, {
-          className: cssClass,
-          onClick: this.onBtnClick,
-          style: cssClass ? {} : style,
-        }, children ? children : buttonText
-      );
+      tag,
+      {
+        className: cssClass,
+        onClick: this.onBtnClick,
+        style: cssClass ? {} : style
+      },
+      children ? children : buttonText
+    );
     return instagramLoginButton;
   }
 }

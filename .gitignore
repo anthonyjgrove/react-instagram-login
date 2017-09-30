@@ -2,3 +2,5 @@ node_modules/
 .DS_store
 .module-cache
 npm-debug.log
+yarn.lock
+package-lock.json

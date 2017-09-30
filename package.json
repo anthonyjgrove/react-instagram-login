@@ -1,6 +1,6 @@
 {
   "name": "react-instagram-login",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "An Instagram Login Component for React",
   "main": "dist/instagram-login.js",
   "scripts": {
@@ -8,20 +8,13 @@
     "bundle": "set NODE_ENV=production&& webpack -p --config webpack.config.dist.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch",
-    "lint": "eslint src/ || true"
+    "lint": "eslint src/ --fix"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anthonyjgrove/react-instagram-login.git"
   },
-  "keywords": [
-    "react",
-    "reactjs",
-    "react-component",
-    "instagram-login",
-    "instagram-oAuth2",
-    "instagram-oAuth"
-  ],
+  "keywords": ["react", "reactjs", "react-component", "instagram-login", "instagram-oAuth2", "instagram-oAuth"],
   "author": "Anthony Grove <anthony@th3legend.com>",
   "license": "MIT",
   "bugs": {
@@ -56,11 +49,7 @@
     "react": "^15.1.0"
   },
   "babel": {
-    "presets": [
-      "es2015",
-      "react",
-      "stage-0"
-    ]
+    "presets": ["es2015", "react", "stage-0"]
   },
   "directories": {
     "test": "test"

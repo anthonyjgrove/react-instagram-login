@@ -4,14 +4,15 @@
     "node": true,
     "mocha": true
   },
-  "extends": [
-    "eslint:recommended",
-    "airbnb"
-  ],
+  "extends": ["eslint:recommended", "airbnb"],
   "parser": "babel-eslint",
-  "plugins": [
-    "react"
-  ],
-  "globals": {
+  "plugins": ["react"],
+  "globals": {},
+  "rules": {
+    "import/no-extraneous-dependencies": 0,
+    "max-len": 0,
+    "new-cap": 0,
+    "no-var": 2,
+    "comma-dangle": 0
   }
 }
