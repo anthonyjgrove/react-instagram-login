@@ -42,7 +42,8 @@ class InstagramLogin extends Component {
   onBtnClick() {
     const { clientId, scope } = this.props
     const redirectUri = this.props.redirectUri || window.location.href
-    window.location.href = `https://api.instagram.com/oauth/authorize/?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=code`
+    const responseType = this.props.implicit_auth ? 'token' : 'code'
+    window.location.href = `https://api.instagram.com/oauth/authorize/?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=${responseType}`
   }
 
   render() {
@@ -77,7 +78,8 @@ InstagramLogin.defaultProps = {
   buttonText: 'Login with Instagram',
   scope: 'basic',
   tag: 'button',
-  type: 'button'
+  type: 'button',
+  implicit_auth: false
 }
 
 InstagramLogin.propTypes = {
@@ -90,7 +92,8 @@ InstagramLogin.propTypes = {
   children: PropTypes.node,
   tag: PropTypes.string,
   redirectUri: PropTypes.string,
-  type: PropTypes.string
+  type: PropTypes.string,
+  implicit_auth: PropTypes.boolean
 }
 
 export default InstagramLogin
