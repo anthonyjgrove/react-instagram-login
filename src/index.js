@@ -28,7 +28,10 @@ class InstagramLogin extends Component {
   }
 
   componentDidMount() {
-    if (window.location.search.includes('code')) {
+    if (this.props.implicitAuth) {
+      const accessToken = window.location.hash.match(/=(.*)/)[1];
+      this.props.onSuccess(getQueryVariable('accessToken'))
+    } else if (window.location.search.includes('code')) {
       this.props.onSuccess(getQueryVariable('code'))
     } else if (window.location.search.includes('error')) {
       this.props.onFailure({
