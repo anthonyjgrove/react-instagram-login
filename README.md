@@ -32,7 +32,7 @@ ReactDOM.render(
 
 Callback will return a code for use on your server to get a full access_token.
 
-If ```implicitAuth``` is set to ```true``` it will returb the full access_token.
+If ```implicitAuth``` is set to ```true``` it will return the full access_token directly.
 
 ## onFailure callback
 
