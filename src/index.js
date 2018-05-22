@@ -32,7 +32,7 @@ class InstagramLogin extends Component {
 
   componentDidMount() {
     if (this.props.implicitAuth) {
-      const matches = window.location.hash.match(/=(.*)/);
+      const matches = window.location.hash.match(/=(.*)/)
       if (matches) {
         this.props.onSuccess(matches[1])
       }
@@ -102,7 +102,7 @@ InstagramLogin.propTypes = {
   tag: PropTypes.string,
   redirectUri: PropTypes.string,
   type: PropTypes.string,
-  implicitAuth: PropTypes.boolean
+  implicitAuth: PropTypes.bool
 }
 
 export default InstagramLogin
