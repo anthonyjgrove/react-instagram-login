@@ -32,6 +32,8 @@ ReactDOM.render(
 
 Callback will return a code for use on your server to get a full access_token.
 
+If ```implicitAuth``` is set to ```true``` it will return the full access_token directly.
+
 ## onFailure callback
 
 Callback will return an error object.
@@ -53,7 +55,8 @@ Callback will return an error object.
 |   buttonText |  string  |            Login with Instagram      |
 |   cssClass   |  string  |                   -                  |
 |     tag      |  string  |                button                |
-|     type      |  string  |               button                |
+|     type     |  string  |                button                |
+| implicitAuth | boolean  |                false                 |
 
 
 Instagram API Docs: https://www.instagram.com/developer/
