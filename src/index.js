@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types' // eslint-disable-line import/no-extraneous-dependencies
 
 function getQueryVariable(variable) {
   const query = window.location.search.substring(1)
@@ -10,14 +10,17 @@ function getQueryVariable(variable) {
       if (pair[0] === variable) {
         return pair[1]
       }
+
       return null
     })
     .filter(d => {
       if (d) {
         return true
       }
+
       return false
     })
+
   return code[0]
 }
 
@@ -70,6 +73,7 @@ class InstagramLogin extends Component {
       },
       children || buttonText
     )
+
     return instagramLoginButton
   }
 }
