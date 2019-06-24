@@ -47,14 +47,18 @@ class InstagramLogin extends Component {
     }
   }
 
-  onBtnClick() {
+  onBtnClick(e) {
+    e.preventDefault();
     const { clientId, scope } = this.props
     const redirectUri = this.props.redirectUri || window.location.href
     const responseType = this.props.implicitAuth ? 'token' : 'code'
     window.location.href = `https://api.instagram.com/oauth/authorize/?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=${responseType}`
+    return false;
   }
 
   render() {
+    if (this.props.render) return <this.props.render onClick={this.onBtnClick} {...this.props} />;
+    
     const style = {
       display: 'inline-block',
       background: 'linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%)',
@@ -95,7 +99,7 @@ InstagramLogin.propTypes = {
   onSuccess: PropTypes.func.isRequired,
   onFailure: PropTypes.func.isRequired,
   clientId: PropTypes.string.isRequired,
-  buttonText: PropTypes.string,
+  render: PropTypes.node,
   scope: PropTypes.string,
   cssClass: PropTypes.string,
   children: PropTypes.node,
