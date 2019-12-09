@@ -51,7 +51,7 @@ class InstagramLogin extends Component {
     const { clientId, scope } = this.props
     const redirectUri = this.props.redirectUri || window.location.href
     const responseType = this.props.implicitAuth ? 'token' : 'code'
-    window.location.href = `https://api.instagram.com/oauth/authorize/?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=${responseType}`
+    window.location.href = `https://api.instagram.com/oauth/authorize/?app_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=${responseType}`
   }
 
   render() {
