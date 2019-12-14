@@ -39,7 +39,7 @@
     "chai": "4.1.2",
     "chai-jquery": "2.0.0",
     "eslint-config-ag": "1.0.4",
-    "jquery": "3.2.1",
+    "jquery": "3.4.1",
     "jsdom": "9.2.0",
     "mocha": "3.5.3",
     "pre-commit": "1.2.2",
