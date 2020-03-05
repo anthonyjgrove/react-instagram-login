@@ -1,8 +1,11 @@
 {
   "name": "react-instagram-login",
   "version": "1.4.0",
+  "_inBundle": false,
+  "_location": "/react-instagram-login",
   "description": "An Instagram Login Component for React",
   "main": "dist/instagram-login.js",
+  "bundleDependencies": false,
   "scripts": {
     "start": "set NODE_ENV=development&& webpack-dev-server --config webpack/webpack.config.dev.js",
     "dev": "npm run start",
